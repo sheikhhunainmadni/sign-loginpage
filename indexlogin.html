@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <div id="header">
+
+    <ul>
+      <li id="two"><button> <a href="indexlogin.html">Login</a></button></li>
+      <li id="two"><button><a href="indexsign.html">Sign in</a></button></li>
+      <li><button><a href="indexdash.html">Dashborad</a></button></li>
+
+
+
+    </ul>
+
+
+  </div>
+
+
+  <h1> Login In Form</h1>
+
+  <form action="#">
+    <div class="container">
+      <label for="firstname">Enter Name</label>
+      <input type="text" name="first name" placeholder="Enter name" id="firstname" required="required">
+      <input type="text" id="lastname" maxlength="15" placeholder="Last Name" required="required">
+
+      <label for="email">Enter Email</label>
+
+
+      <input type="email" name="emial" placeholder="enter email" id="email" required="required">
+
+
+
+      <label for="passwoard">Enter Password</label>
+
+      <input type="password" name="password" placeholder="enter password" id="password" required="required">
+
+
+
+      <label for="firstname">Enter Gander</label>
+
+      <input type="radio" name="genre" value="malr" checked="checked" /> Male
+      <input type="radio" name="genre" value="girl" />
+      Girl
+
+      <button onclick="return login()">login </button>
+    </div>
+  </form>
+  <h2 id="pass"></h2>
+  <script>
+
+
+
+    var names = [];
+    var emails = [];
+    var passwords = [];
+
+    function login() {
+
+
+      names.push(document.getElementById("firstname").value + " " + document.getElementById("lastname").value);
+      emails.push(document.getElementById("email").value);
+      passwords.push(document.getElementById("password").value);
+
+      localStorage.setItem("name", JSON.stringify(names));
+      localStorage.setItem("email", JSON.stringify(emails));
+      localStorage.setItem("password", JSON.stringify(passwords));
+
+      alert("logins success");
+
+      window.location.href = "./indexsign.html";
+      return false;
+    }
+
+
+  </script>
+
+
+</body>
+
+</html>

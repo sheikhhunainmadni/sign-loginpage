@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assigment</title>
+</head>
+<link rel="stylesheet" href="index.css">
+
+<body>
+
+  <div id="header">
+
+    <ul>
+      <li><button> <a href="indexlogin.html">Login</a></button></li>
+      <li><button><a href="indexsign.html">Sign in</a></button></li>
+      <li><button><a href="indexdash.html">Dashborad </a></button></li>
+
+    </ul>
+
+
+  </div>
+
+
+  <h2>Sign in form</h2>
+
+  <form>
+
+    <div class="container">
+      <label><b>Email</b></label>
+      <input type="email" placeholder="Enter name" id="email" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" id="password" required>
+      <button onclick="return sign()">Sign In</button>
+
+
+      <!-- <button id="butt">logout</button> -->
+    </div>
+  </form>
+
+
+
+  <script>
+
+    var names = JSON.parse(localStorage.getItem("name"))
+    var emails = JSON.parse(localStorage.getItem("email"))
+    var passwords = JSON.parse(localStorage.getItem("password"))
+
+
+
+    function sign() {
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      let isFound = false;
+
+
+      for (let i = 0; i < emails.length; i++) {
+        if (email === emails[i]) {
+          isFound = i;
+          break;
+        }
+      }
+
+      if (isFound === false) {
+        alert("user not found")
+      }
+      else if (passwords[isFound] === password) {
+
+        alert("login success");
+        window.location.href = "./indexdash.html"
+
+      } else {
+        alert("Error Password or Username")
+      }
+
+
+      return false;
+    }
+  </script>
+
+
+</body>
+
+</html>

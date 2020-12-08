@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+    
+<h1>Your Details </h1>
+    
+       <h2 id="email"></h2>
+       <h2 id="password"></h2>
+     <buttton id="butt"> <a href="indexsign.html">Log out</a></button>
+
+
+    <script>
+        document.getElementById("email").innerHTML = localStorage.getItem("email");
+        document.getElementById("password").innerHTML = localStorage.getItem("password");
+        
+    </script>
+
+
+
+
+</body>
+
+
+</html>
